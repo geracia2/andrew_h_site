@@ -1,8 +1,11 @@
-import './App.css'
-import { Routes, Route } from 'react-router-dom'
-import Home from './assets/pages/Home'
-import VoiceOver from "./assets/pages/VoiceOver"
-
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Home from './assets/pages/Home';
+import VoiceOver from './assets/pages/VoiceOver';
+import Studio from './assets/pages/Studio';
+import Resume from './assets/pages/Resume';
+import Podcast from './assets/pages/Podcast'
+import Contact from './assets/pages/Contact'
 
 function App() {
 
