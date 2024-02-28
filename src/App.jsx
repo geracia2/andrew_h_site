@@ -6,12 +6,12 @@ import Studio from './assets/pages/Studio';
 import Resume from './assets/pages/Resume';
 import Podcast from './assets/pages/Podcast'
 import Contact from './assets/pages/Contact'
-import { Navbar } from './assets/ui/navbar';
+import Nav from './assets/ui/Nav';
 function App() {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/voiceover" element={<VoiceOver />} />

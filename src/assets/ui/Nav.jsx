@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Container, Group, Burger } from '@mantine/core';
+import { Container, Group, Burger, Image } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { MantineLogo } from '@mantinex/mantine-logo';
+// import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './Navbar.module.css';
 
 const links = [
@@ -11,7 +11,7 @@ const links = [
   { link: '/community', label: 'Community' },
 ];
 
-export default function  Navbar() {
+export default function Nav() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
 
@@ -33,7 +33,8 @@ export default function  Navbar() {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <MantineLogo size={28} />
+     <Image h={80} src='.\images\Logo_1_tansp_white.png'/>
+      <img ></img>
         <Group gap={5} visibleFrom="xs">
           {items}
         </Group>
@@ -43,4 +44,3 @@ export default function  Navbar() {
     </header>
   );
 }
-
