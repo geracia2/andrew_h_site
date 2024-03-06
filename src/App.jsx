@@ -7,19 +7,30 @@ import Resume from './assets/pages/Resume';
 import Podcast from './assets/pages/Podcast'
 import Contact from './assets/pages/Contact'
 import Nav from './assets/ui/Nav';
+import { Center, Container } from '@mantine/core';
 function App() {
+
+  // conitainer can also use props like below, inline looks like <Container {...centerProps}>
+  const centerProps = {
+    bg: 'var(--mantine-color-blue-light)',
+    h: 2000,
+    pt: 100,
+  };
 
   return (
     <>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/voiceover" element={<VoiceOver />} />
-        <Route path="/studio" element={<Studio />} />
-        <Route path="/podcast" element={<Podcast />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      {/* adding a container to control layout */}
+      <Container bg='var(--mantine-color-blue-light)' h={2000} pt={100} >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/voiceover" element={<VoiceOver />} />
+          <Route path="/studio" element={<Studio />} />
+          <Route path="/podcast" element={<Podcast />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Container>
     </>
   )
 }

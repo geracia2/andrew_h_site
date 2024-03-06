@@ -1,18 +1,19 @@
 .header {
   position: fixed;
-  top: rem(20px);
-  height: rem(80px);
-  margin-right: 0;
-  margin-left: 0;
+  /* top: rem(20px); */
+  /* height: rem(900px); */
+  /* margin-right: 0; */
+  /* margin-left: 0; */
   right: 0;
   left: 0;
-  margin-bottom: rem(120px);
-  background-color: var(--mantine-color-body);
-  border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  /* margin-bottom: rem(200px); */
+  /* background-color: var(--mantine-color-body); */
+  background-color: brown;
+  /* border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4)); */
 }
 
 .inner {
-  height: rem(56px);
+  /* height: rem(56px); */
   display: flex;
   justify-content: space-between;
   align-items: center;

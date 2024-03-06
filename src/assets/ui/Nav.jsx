@@ -74,17 +74,6 @@ export default function Nav() {
     );
   });
 
-  const mobileNav = (
-    <Menu shadow="md" width={200} opened={opened} onChange={toggle} position="bottom" offset={50} >
-      <Menu.Dropdown>
-        <Menu.Item>
-          {items}
-        </Menu.Item>
-        
-      </Menu.Dropdown>
-    </Menu>
-  )
-
   return (
     <header className={classes.header}>
       <Container size="md">
@@ -94,17 +83,28 @@ export default function Nav() {
           <Group gap={5} visibleFrom="sm">
             {items}
           </Group>
-          {/* mobile nav */}
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-          {opened &&
-            <>
-              {/* <div style={{ border: 'solid 5px red' }}> */}
-                {mobileNav}
-              {/* </div> */}
-            </>
+          {opened ?
+            (
+              <>
+                <Menu shadow="md" width={200} opened={opened} position="bottom" offset={20}  >
+                  <Menu.Target>
+                    <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+                  </Menu.Target>
+                  <Menu.Dropdown>
+                    <Menu.Item>
+                      {items}
+                    </Menu.Item>
+                  </Menu.Dropdown>
+                </Menu>
+              </>
+            ) : (
+              <>
+                <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+              </>
+            )
           }
         </div>
       </Container>
-    </header>
+    </header >
   );
 }
