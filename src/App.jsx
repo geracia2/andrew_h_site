@@ -14,7 +14,7 @@ import Elearning from './assets/pages/vo/Elearning.jsx';
 import Explainers from './assets/pages/vo/Explainers.jsx';
 
 import Nav from './assets/ui/Nav';
-import { Center, Container } from '@mantine/core';
+import { Container } from '@mantine/core';
 function App() {
 
   // conitainer can also use props like below, inline looks like <Container {...centerProps}>
