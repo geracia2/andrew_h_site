@@ -1,28 +1,31 @@
 .headerBar {
   position: fixed;
+  right: 0;
+  left: 0;
   /* top: rem(20px); */
   /* height: rem(900px); */
   /* margin-right: 0; */
   /* margin-left: 0; */
-  right: 0;
-  left: 0;
   /* margin-bottom: rem(200px); */
-  /* background-color: var(--mantine-color-body); */
-  background-color: brown;
-  /* border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4)); */
+  background-color: var(--mantine-color-body);
 }
 
 .inner {
   /* height: rem(56px); */
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  /* border: solid yellow 5px; */
 }
 .stackNav {
+  /* width: 400px; */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  /* border: solid black 5px; */
 }
 
 .footer {

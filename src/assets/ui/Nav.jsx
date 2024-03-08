@@ -1,14 +1,20 @@
-import { Menu, Group, Center, Burger, Container, Image, Button, Text, rem, ActionIcon } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown, IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandTwitch, IconBrandLinkedin } from '@tabler/icons-react';
 import {
-  IconSettings,
-  IconSearch,
-  IconPhoto,
-  IconMessageCircle,
-  IconTrash,
-  IconArrowsLeftRight,
+  Menu,
+  Group,
+  Burger,
+  Container,
+  Image,
+  rem,
+  ActionIcon
+} from '@mantine/core';
+import {
+  IconChevronDown,
+  IconBrandLinkedin,
+  IconBrandYoutube,
+  IconBrandInstagram,
+  IconBrandTwitch
 } from '@tabler/icons-react';
+import { useDisclosure } from '@mantine/hooks';
 import classes from './Nav.module.css';
 import { Link } from 'react-router-dom';
 
@@ -20,18 +26,21 @@ const links = [
     links: [
       { link: '/voiceOver', label: "What's the deal?" },
       { link: '/commercial', label: 'Commercial' },
-      { link: '/eLearning', label: 'eLearning' },
       { link: '/eExplainers', label: 'Explainers' },
+      { link: '/characters', label: 'Characters' },
+      { link: '/eLearning', label: 'eLearning' },
+      { link: '/audioDrama', label: 'Audio Drama' },
     ],
   },
-  { link: '/studio', label: 'Studio' },
   { link: '/podcast', label: 'Winging It Podcast' },
   { link: '/resume', label: 'Resume' },
+  { link: '/about', label: 'About Me and Studio' },
   { link: '/contact', label: 'Contact' },
 
 ];
 
 export default function Nav() {
+
   // burger open/close
   const [opened, { toggle }] = useDisclosure(false);
 
@@ -52,17 +61,14 @@ export default function Nav() {
           {/* menu target is the fold down title */}
           <Menu.Target>
             <a href={link.link} className={classes.link} onClick={(event) => event.preventDefault()} >
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                <IconChevronDown size="0.9rem" stroke={1.5} />
-              </Center>
+              <span className={classes.linkLabel}>{link.label}</span>
+              <IconChevronDown size="0.9rem" stroke={1.5} />
             </a>
           </Menu.Target>
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
         </Menu>
       );
     }
-
     return (
       <Link to={link.link} key={link.label} className={classes.link}>
         {link.label}
@@ -72,14 +78,14 @@ export default function Nav() {
 
   const socialMedia = (
     <Container className={classes.inner}>
-      <Group gap={0} className={classes.links} justify="flex-end" wrap="nowrap">
-        <ActionIcon size="lg" color="gray" variant="subtle">
-          <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+      <Group justify="space-around" wrap="nowrap">
+        <ActionIcon size="lg" color="gray" variant="subtle" component='a' href="https://www.linkedin.com/in/andrewhartmanvo/" target="_blank">
+          <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
         </ActionIcon>
-        <ActionIcon size="lg" color="gray" variant="subtle">
+        <ActionIcon size="lg" color="gray" variant="subtle" component='a' href="https://www.youtube.com/channel/UCAMlYN8vT418x6MBxlnyDeA" target="_blank">
           <IconBrandYoutube style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
         </ActionIcon>
-        <ActionIcon size="lg" color="gray" variant="subtle">
+        <ActionIcon size="lg" color="gray" variant="subtle" component='a' href="https://www.instagram.com/hartblam/" target="_blank">
           <IconBrandInstagram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
         </ActionIcon>
       </Group>
@@ -91,10 +97,11 @@ export default function Nav() {
       <Container size="md">
         {/* desktop Nav */}
         <div className={classes.inner}>
-          <Image h={90} src='.\images\Logo_1_tansp_white.png' />
-
-          <Group gap={5} visibleFrom="sm" className={classes.stackNav} >{socialMedia}{items}</Group>
-
+          <Link to='/'><Image h={90} src='.\images\Logo_1_tansp_white.png' /></Link>
+          <div className={classes.stackNav}>
+            {socialMedia}
+            <Group gap={5} visibleFrom="sm" className={classes.inner}>{items}</Group>
+          </div>
           {opened ?
             (<>
               {/* mobile dropdown Nav */}
@@ -106,15 +113,13 @@ export default function Nav() {
                   <Menu.Item>
                     {items}
                   </Menu.Item>
-                  {socialMedia}
+                  {/* {socialMedia} */}
                 </Menu.Dropdown>
               </Menu>
             </>) : (<>
               <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
             </>)
           }
-
-
         </div>
       </Container>
     </header >
