@@ -1,11 +1,18 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+
 import Home from './assets/pages/Home';
-import VoiceOver from './assets/pages/VoiceOver';
-import Studio from './assets/pages/Studio';
 import Resume from './assets/pages/Resume';
-import Podcast from './assets/pages/Podcast'
 import Contact from './assets/pages/Contact'
+import Podcast from './assets/pages/Podcast.jsx';
+import About from './assets/pages/About.jsx';
+import VoiceOver from './assets/pages/vo/VoiceOver.jsx';
+import AudioDrama from './assets/pages/vo/AudioDrama.jsx';
+import Characters from './assets/pages/vo/Characters.jsx';
+import Commercial from './assets/pages/vo/Commercial.jsx';
+import Elearning from './assets/pages/vo/Elearning.jsx';
+import Explainers from './assets/pages/vo/Explainers.jsx';
+
 import Nav from './assets/ui/Nav';
 import { Center, Container } from '@mantine/core';
 function App() {
@@ -24,11 +31,16 @@ function App() {
       <Container bg='var(--mantine-color-blue-light)' h={2000} pt={100} >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/voiceover" element={<VoiceOver />} />
-          <Route path="/studio" element={<Studio />} />
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/voiceover" element={<VoiceOver />} />
+          <Route path="/audioDrama" element={<AudioDrama />} />
+          <Route path="/eLearning" element={<Elearning />} />
+          <Route path="/characters" element={<Characters />} />
+          <Route path="/explainers" element={<Explainers />} />
+          <Route path="/commercial" element={<Commercial />} />
         </Routes>
       </Container>
     </>
